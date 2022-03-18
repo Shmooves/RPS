@@ -28,23 +28,46 @@
     }
      
 }
-   function playRound (playerSelection,computerSelection) {
-       let tie = "It's a Tie! You selected" + playerSelection + "and the computer selected" + computerSelection;
-       let paperBeatRock = "You Win! You selected" + playerSelection + "and the computer selected" + computerSelection;
-       let scissorsBeatPaper = "You Win! You selected" + playerSelection + "and the computer selected" + computerSelection;
-       let rockBeatscissors = "You Win! You selected" + playerSelection + "and the computer selected" + computerSelection;
-       let paperBeatRockLoss = "You Lose! You selected" + playerSelection + "and the computer selected" + computerSelection;
-       let scissorsBeatRockLoss = "You Lose! You selected" + playerSelection + "and the computer selected" + computerSelection;
-       let rockBeatscissorsLoss = "You Lose! You selected" + playerSelection + "and the computer selected" + computerSelection;
+   function playRound(firstLetterCaps,computerSelection) {
+       let tie = "It's a Tie! You selected" + firstLetterCaps + "and the computer selected" + computerSelection;
+       let paperBeatRock = "You Win! You selected" + firstLetterCaps + "and the computer selected" + computerSelection;
+       let scissorsBeatPaper = "You Win! You selected" + firstLetterCaps + "and the computer selected" + computerSelection;
+       let rockBeatscissors = "You Win! You selected" + firstLetterCaps + "and the computer selected" + computerSelection;
+       let paperBeatRockLoss = "You Lose! You selected" + firstLetterCaps + "and the computer selected" + computerSelection;
+       let scissorsBeatPaperLoss = "You Lose! You selected" + firstLetterCaps+ "and the computer selected" + computerSelection;
+       let rockBeatscissorsLoss = "You Lose! You selected" + firstLetterCaps + "and the computer selected" + computerSelection;
 
-       
+       if(firstLetterCaps === computerSelection) {
+           return tie;
+       } else if ((firstLetterCaps === "Paper") && (computerSelection === "Rock")) {
+           return paperBeatRock;
+       } else if ((firstLetterCaps === "Scissors") && (computerSelection === "Paper")) {
+           return scissorsBeatPaper;
+       } else if ((firstLetterCaps === "Rock") && (computerSelection === "Scissors")) {
+           return rockBeatscissors;
+       } else if ((firstLetterCaps === "Rock") && (computerSelection === "Paper")) {
+           return paperBeatRockLoss;
+       } else if ((firstLetterCaps === "Paper") && (computerSelection === "Scissors")) {
+           return scissorsBeatPaperLoss ;
+       } else if ((firstLetterCaps === "Scissors") && (computerSelection ==="Rock")) {
+           return rockBeatscissorsLoss ;
+       }
 
+    
 
    }
     
-   
-    
+    const playerSelection = "Rock" ;
+    const computerSelection = computerPlay()
 
+    function capitalize(playerSelection) {
+    let allLowerCase = playerSelection.toLowerCase();
+    let firstLetterCaps = allLowerCase.charAt(0).toUpperCase() + allLowerCase.slice(1);
+    return firstLetterCaps;
+    }
+    console.log (playRound(capitalize(playerSelection), computerSelection))
+
+  
 
 
 
