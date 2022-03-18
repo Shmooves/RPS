@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lan="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    
+</head>
+    <body>
+        <h1>Rock Paper Scissors</h1>
+    <script>
+
+    function computerPlay() {
+    let rock = "Rock";
+    let paper = "Paper";
+    let scissors = "Scissors";
+    let getRandomValue = Math.random();
+    
+    if (getRandomValue <= 0.33) {
+        return rock;
+    }
+    else if (getRandomValue<=0.66) {
+        return paper;
+    }
+    else {
+        return scissors;
+        
+    }
+     
+}
+    console.log(computerPlay())
+    
+    
+    </script>
+    
+    
+    
+    </body>
+    
+</html>
